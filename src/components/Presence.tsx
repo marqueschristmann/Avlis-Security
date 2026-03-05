@@ -1,63 +1,358 @@
+import { useState, useEffect, useCallback } from 'react';
+import edpGrupoImg from '../assets/EDP-Grupo.png';
+import statkraftImg from '../assets/complex-sao-fernando.png';
+import anemusImg from '../assets/2w-eolica.png';
+import elawanImg from '../assets/Elawan-Macambiras.png';
+import echoenergiaImg from '../assets/echoenergia.png';
+import cpelImg from '../assets/copel.png';
+import mpe from '../assets/Serra-do-tigre.png';
+import vestas from '../assets/Vestas-do-Brasil.png';
+import elera from '../assets/Elera.png';
+import nordex from '../assets/Nordex.png';
+import totalwind from '../assets/RNMacau.png';
+import elawan2 from '../assets/Elawan.png';
+import iberobras from '../assets/iberobras.png';
+import tsk from '../assets/TSK.png';
+
+type ClientStatus = 'ATIVO' | 'PARCEIROS ANTERIORES';
+
+interface ClientSlide {
+    client: string;
+    projects: string[];
+    status: ClientStatus;
+    image: string;
+    sector: string;
+}
+
+const slides: ClientSlide[] = [
+    // ── ATIVOS ──────────────────────────────────────────────────────────────
+    {
+        client: 'EDP',
+        projects: [
+            'Complexo Eólico Baixa do Feijão I-IV',
+            'Complexo Eólico JAU (Jericó-Umbuzeiro-Aroeira)',
+            'Complexo Eólico Aventura I',
+            'Complexo Eólico Monte Verde I-VI',
+            'Usina Fotovoltaica Monte Verde Solar II, III, IV, V e VII',
+            'Complexo Eólico Catanduba I-II',
+            'Complexo Eólico Itaúna I-III & São Domingos I-V',
+        ],
+        status: 'ATIVO',
+        sector: 'Cliente Ativo · Energia Eólica & Solar',
+        image: edpGrupoImg,
+    },
+    {
+        client: 'Statkraft',
+        projects: [
+            'Complexo Eólico Ventos de São Fernando I-IV',
+            'Complexo Eólico Jerusalém I-VI & Boqueirão I-II',
+        ],
+        status: 'ATIVO',
+        sector: 'Cliente Ativo · Energia Eólica',
+        image: statkraftImg,
+    },
+    {
+        client: 'Anemus Wind',
+        projects: ['Complexo Eólico Anemus I-III'],
+        status: 'ATIVO',
+        sector: 'Cliente Ativo · Energia Eólica',
+        image: anemusImg,
+    },
+    {
+        client: 'Elawan',
+        projects: [
+            'Parque Eólico Macambira I',
+            'Parque Eólico Macambira II',
+        ],
+        status: 'ATIVO',
+        sector: 'Cliente Ativo · Energia Eólica',
+        image: elawanImg,
+    },
+    {
+        client: 'Fazenda Itaueira',
+        projects: ['Viveiro de Camarões Itaueira'],
+        status: 'ATIVO',
+        sector: 'Cliente Ativo · Aquicultura',
+        image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop',
+    },
+    // ── ANTECESSORES ────────────────────────────────────────────────────────
+    {
+        client: 'Echoenergia (Grupo Equatorial)',
+        projects: [
+            'Complexo Eólico João Câmara (Cabeço Preto)',
+            'Complexo Eólico Lagoa Nova',
+            'Complexo Eólico Pedra Rajada I-II',
+            'Complexo Eólico Pedra do Reino I-III',
+            'Complexo Eólico Serra do Mel I',
+            'Complexo Eólico Serra do Mel II',
+        ],
+        status: 'PARCEIROS ANTERIORES',
+        sector: 'PARCEIROS ANTERIORES · Energia Eólica',
+        image: echoenergiaImg,
+    },
+    {
+        client: 'COPEL',
+        projects: [
+            'Complexo Eólico Aventura II-V',
+            'Complexo Eólico Santa Rosa Mundo Novo I-VI',
+        ],
+        status: 'PARCEIROS ANTERIORES',
+        sector: 'PARCEIROS ANTERIORES · Energia Eólica',
+        image: cpelImg,
+    },
+    {
+        client: 'MPE Engenharia',
+        projects: ['Complexo Eólico Serra do Tigre Sul'],
+        status: 'PARCEIROS ANTERIORES',
+        sector: 'PARCEIROS ANTERIORES · Energia Eólica',
+        image: mpe,
+    },
+    {
+        client: 'Vestas do Brasil',
+        projects: [
+            'Complexo Eólico Cumaru',
+            'Complexo Eólico Rio dos Ventos',
+        ],
+        status: 'PARCEIROS ANTERIORES',
+        sector: 'PARCEIROS ANTERIORES · Energia Eólica',
+        image: vestas,
+    },
+    {
+        client: 'Elera',
+        projects: ['Complexo Eólico Seridó'],
+        status: 'PARCEIROS ANTERIORES',
+        sector: 'PARCEIROS ANTERIORES · Energia Eólica',
+        image: elera,
+    },
+    {
+        client: 'Nordex',
+        projects: [
+            'Complexo Eólico Jandaíra',
+            'Parque Eólico Passagem',
+        ],
+        status: 'PARCEIROS ANTERIORES',
+        sector: 'PARCEIROS ANTERIORES · Energia Eólica',
+        image: nordex,
+    },
+    {
+        client: 'TOTAL WIND BRASIL',
+        projects: ['Complexo Eólico Macau'],
+        status: 'PARCEIROS ANTERIORES',
+        sector: 'PARCEIROS ANTERIORES · Energia Eólica',
+        image: totalwind,
+    },
+    {
+        client: 'Elawan',
+        projects: ['Parque Eólico Pedra do Reino IV'],
+        status: 'PARCEIROS ANTERIORES',
+        sector: 'PARCEIROS ANTERIORES · Energia Eólica',
+        image: elawan2,
+    },
+    {
+        client: 'Iberobras',
+        projects: [
+            'Parque Eólico Calango 6',
+            'Parque Eólico Santana 1 e 2',
+            'Parque Eólico Santa Luzia',
+        ],
+        status: 'PARCEIROS ANTERIORES',
+        sector: 'PARCEIROS ANTERIORES · Energia Eólica',
+        image: iberobras,
+    },
+    {
+        client: 'TSK',
+        projects: [
+            'Parque Eólico Aventura III',
+            'Parque Eólico João Câmara',
+        ],
+        status: 'PARCEIROS ANTERIORES',
+        sector: 'PARCEIROS ANTERIORES · Energia Eólica',
+        image: tsk,
+    },
+];
+
 export default function Presence() {
+    const [current, setCurrent] = useState(0);
+    const [animating, setAnimating] = useState(false);
+    const [direction, setDirection] = useState<'next' | 'prev'>('next');
+
+    const goto = useCallback(
+        (index: number, dir: 'next' | 'prev') => {
+            if (animating) return;
+            setDirection(dir);
+            setAnimating(true);
+            setTimeout(() => {
+                setCurrent(index);
+                setAnimating(false);
+            }, 450);
+        },
+        [animating],
+    );
+
+    const prev = () => goto((current - 1 + slides.length) % slides.length, 'prev');
+    const next = () => goto((current + 1) % slides.length, 'next');
+
+    // Auto-advance every 6 s
+    useEffect(() => {
+        const id = setInterval(() => {
+            goto((current + 1) % slides.length, 'next');
+        }, 6000);
+        return () => clearInterval(id);
+    }, [current, goto]);
+
+    // Keyboard navigation
+    useEffect(() => {
+        const handler = (e: KeyboardEvent) => {
+            if (e.key === 'ArrowLeft') prev();
+            if (e.key === 'ArrowRight') next();
+        };
+        window.addEventListener('keydown', handler);
+        return () => window.removeEventListener('keydown', handler);
+    });
+
+    const slide = slides[current];
+
+    const slideClass = animating
+        ? direction === 'next'
+            ? 'opacity-0 translate-x-[2%]'
+            : 'opacity-0 -translate-x-[2%]'
+        : 'opacity-100 translate-x-0';
+
     return (
         <section className="py-32 bg-background-dark relative overflow-hidden" id="presenca">
             <div className="absolute inset-0 grid-bg opacity-10 pointer-events-none"></div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
+                {/* Header */}
                 <div className="text-center mb-20">
                     <h2 className="text-primary text-[10px] font-bold tracking-[0.5em] uppercase mb-4 flex items-center justify-center gap-2">
                         <span className="size-2 bg-primary"></span> Presença Estratégica
                     </h2>
-                    <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tighter uppercase italic">Parques que Estamos Atuando</h3>
+                    <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tighter uppercase italic">
+                        Atuação & Clientes
+                    </h3>
                 </div>
 
+                {/* Carousel */}
                 <div className="relative group">
-                    <div className="aspect-[21/9] glass-card rounded-2xl overflow-hidden relative border-primary/20 backdrop-blur-xl">
+                    {/* Main Card */}
+                    <div
+                        className="aspect-[21/9] glass-card rounded-2xl overflow-hidden relative border-primary/20 backdrop-blur-xl"
+                        style={{ minHeight: '360px' }}
+                    >
+                        {/* Background image */}
                         <img
-                            className="w-full h-full object-cover grayscale opacity-40 transition-transform duration-1000 group-hover:scale-110"
-                            src="https://images.unsplash.com/photo-1466611653911-95282fc3656b?q=80&w=2070&auto=format&fit=crop"
-                            alt="Wind farm at night"
+                            key={`img-${current}`}
+                            className={`w-full h-full object-cover grayscale opacity-40 absolute inset-0 transition-all duration-500 ease-out group-hover:scale-105 ${slideClass}`}
+                            src={slide.image}
+                            alt={slide.client}
+                            loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
 
-                        <div className="absolute bottom-12 left-12 animate-slide-up">
-                            <div className="text-primary text-xs font-bold tracking-[0.3em] uppercase mb-4 border-l-2 border-primary pl-4">Sector: Alpha-9</div>
-                            <h4 className="text-4xl md:text-5xl font-bold text-white uppercase italic tracking-tighter mb-8">Complexo Eólico<br />Ventos do Norte</h4>
-                            <div className="flex items-center gap-10">
-                                <div>
-                                    <div className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 font-bold font-mono">Status</div>
-                                    <div className="text-primary font-bold text-sm tracking-widest flex items-center gap-2 font-mono">
-                                        <span className="size-2 bg-primary rounded-full animate-pulse shadow-[0_0_10px_#93C572]"></span>
-                                        SECURED
-                                    </div>
-                                </div>
-                                <div className="w-px h-10 bg-white/10 hidden sm:block"></div>
-                                <div>
-                                    <div className="text-[10px] text-slate-500 uppercase tracking-widest mb-2 font-bold font-mono">Active Nodes</div>
-                                    <div className="text-white font-bold text-sm font-mono tracking-widest">142 Units</div>
-                                </div>
+                        {/* Gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/60 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-background-dark/70 via-transparent to-transparent"></div>
+
+                        {/* Status badge top-right */}
+                        <div className="absolute top-6 right-6 flex items-center gap-2">
+                            <span
+                                className={`text-[10px] font-bold tracking-[0.3em] uppercase px-3 py-1.5 border font-mono ${slide.status === 'ATIVO'
+                                    ? 'border-primary/50 text-primary bg-primary/10'
+                                    : 'border-slate-500/50 text-slate-400 bg-slate-800/40'
+                                    }`}
+                            >
+                                {slide.status === 'ATIVO' ? (
+                                    <span className="flex items-center gap-2">
+                                        <span className="size-1.5 bg-primary rounded-full animate-pulse shadow-[0_0_8px_#93C572]"></span>
+                                        ATIVO
+                                    </span>
+                                ) : (
+                                    'PARCEIROS ANTERIORES'
+                                )}
+                            </span>
+                        </div>
+
+                        {/* Content */}
+                        <div
+                            className={`absolute bottom-0 left-0 right-0 p-8 md:p-12 transition-all duration-500 ease-out ${slideClass}`}
+                        >
+                            {/* Sector tag */}
+                            <div className="text-primary text-[10px] font-bold tracking-[0.3em] uppercase mb-4 border-l-2 border-primary pl-4 font-mono">
+                                {slide.sector}
+                            </div>
+
+                            {/* Client name */}
+                            <h4 className="text-3xl md:text-5xl font-bold text-white uppercase italic tracking-tighter mb-6 leading-none">
+                                {slide.client}
+                            </h4>
+
+                            {/* Projects list */}
+                            <div className="flex flex-wrap gap-2 mb-6">
+                                {slide.projects.map((p, i) => (
+                                    <span
+                                        key={i}
+                                        className="text-[10px] text-slate-300 border border-white/10 bg-white/5 px-2.5 py-1 font-mono tracking-wider leading-tight"
+                                    >
+                                        {p}
+                                    </span>
+                                ))}
                             </div>
                         </div>
                     </div>
 
-                    {/* Hexagonal Controls */}
+                    {/* Navigation Controls */}
                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 z-20">
-                        <button className="size-14 bg-background-dark border border-primary/30 flex items-center justify-center hover:bg-primary text-primary hover:text-background-dark transition-all shadow-2xl" style={{ clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)' }}>
+                        {/* Prev button */}
+                        <button
+                            onClick={prev}
+                            aria-label="Slide anterior"
+                            className="size-14 bg-background-dark border border-primary/30 flex items-center justify-center hover:bg-primary text-primary hover:text-background-dark transition-all shadow-2xl focus:outline-none"
+                            style={{ clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)' }}
+                        >
                             <span className="material-symbols-outlined font-bold">chevron_left</span>
                         </button>
-                        <div className="px-10 py-3 bg-background-dark border border-primary/20 text-xs font-mono text-primary tracking-[0.6em] flex items-center gap-6 rounded-sm shadow-xl">
-                            <span className="opacity-40 font-bold">01</span>
-                            <div className="w-16 h-[1px] bg-primary/30"></div>
-                            <span className="font-bold">05</span>
+
+                        {/* Counter */}
+                        <div className="px-10 py-3 bg-background-dark border border-primary/20 text-xs font-mono text-primary tracking-[0.6em] flex items-center gap-6 rounded-sm shadow-xl select-none">
+                            <span className="opacity-40 font-bold">{String(current + 1).padStart(2, '0')}</span>
+                            <div className="w-16 h-[1px] bg-primary/30 relative overflow-hidden">
+                                <div
+                                    className="h-full bg-primary transition-all duration-500 ease-out"
+                                    style={{ width: `${((current + 1) / slides.length) * 100}%` }}
+                                ></div>
+                            </div>
+                            <span className="font-bold">{String(slides.length).padStart(2, '0')}</span>
                         </div>
-                        <button className="size-14 bg-background-dark border border-primary/30 flex items-center justify-center hover:bg-primary text-primary hover:text-background-dark transition-all shadow-2xl" style={{ clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)' }}>
+
+                        {/* Next button */}
+                        <button
+                            onClick={next}
+                            aria-label="Próximo slide"
+                            className="size-14 bg-background-dark border border-primary/30 flex items-center justify-center hover:bg-primary text-primary hover:text-background-dark transition-all shadow-2xl focus:outline-none"
+                            style={{ clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)' }}
+                        >
                             <span className="material-symbols-outlined font-bold">chevron_right</span>
                         </button>
+                    </div>
+
+                    {/* Dot indicators */}
+                    <div className="flex justify-center gap-1.5 mt-12 flex-wrap">
+                        {slides.map((s, i) => (
+                            <button
+                                key={i}
+                                onClick={() => goto(i, i > current ? 'next' : 'prev')}
+                                aria-label={`Ir para ${s.client}`}
+                                className={`transition-all duration-300 focus:outline-none ${i === current
+                                    ? 'w-8 h-1.5 bg-primary shadow-[0_0_8px_#93C572]'
+                                    : 'w-1.5 h-1.5 bg-white/20 hover:bg-white/40'
+                                    }`}
+                            />
+                        ))}
                     </div>
                 </div>
 
                 {/* Stats Grid */}
-                <div className="mt-32 grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+                <div className="mt-24 grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
                     {[
                         { value: '24/7', label: 'Monitoramento' },
                         { value: '15+', label: 'Parques Ativos' },
@@ -65,7 +360,9 @@ export default function Presence() {
                         { value: '0ms', label: 'Latência Operacional' },
                     ].map((stat, i) => (
                         <div key={i} className="text-center border-t border-primary/10 pt-10 group hover:border-primary/40 transition-colors">
-                            <div className="text-4xl md:text-5xl font-bold text-white mb-2 font-display italic transition-colors group-hover:text-primary">{stat.value}</div>
+                            <div className="text-4xl md:text-5xl font-bold text-white mb-2 font-display italic transition-colors group-hover:text-primary">
+                                {stat.value}
+                            </div>
                             <div className="text-[10px] text-slate-500 tracking-[0.2em] uppercase font-bold">{stat.label}</div>
                         </div>
                     ))}
