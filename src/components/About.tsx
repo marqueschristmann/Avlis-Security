@@ -26,25 +26,38 @@ export default function About() {
                     </h3>
                     <div className="space-y-10">
                         <p className="text-slate-400 text-lg leading-relaxed font-light">
-                            Nascemos da necessidade de um novo padrão de segurança: um que não apenas reaja, mas preveja.
-                            A Avlis combina disciplina tática com as tecnologias mais disruptivas do mercado global.
+                           Nosso objetivo é entregar aos clientes uma estrutura de serviços capaz de proteger patrimônios, controlar acessos, monitorar eventos, apoiar operações e garantir maior organização nas rotinas diárias.
+Para isso, atuamos com equipes orientadas, procedimentos padronizados, uso adequado da tecnologia e acompanhamento constante das atividades executadas, buscando reduzir riscos, prevenir ocorrências, melhorar a comunicação operacional e gerar evidências claras da prestação dos serviços.
+Trabalhamos para que cada cliente tenha mais tranquilidade, previsibilidade e confiança na gestão da sua segurança, seja por meio da presença física dos nossos profissionais, seja por meio da operação remota, dos sistemas eletrônicos ou da integração entre todos esses recursos.
+
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                             <div className="border-l-2 border-primary pl-8 transition-all hover:pl-10">
                                 <h4 className="text-white font-bold uppercase text-xs tracking-[0.2em] mb-4">Missão</h4>
-                                <p className="text-slate-500 text-xs leading-relaxed">Garantir a inviolabilidade dos ativos mais valiosos do mundo.</p>
+                                <p className="text-slate-500 text-xs leading-relaxed">Nossa missão é oferecer soluções integradas em segurança patrimonial, portaria, controle de acesso, recepção, monitoramento e sistemas eletrônicos, unindo pessoas, tecnologia e procedimentos bem definidos para proteger patrimônios, organizar fluxos e apoiar a rotina operacional dos nossos clientes.
+Atuamos com responsabilidade, presença, disciplina e atenção aos detalhes, entendendo que cada acesso controlado, cada ocorrência registrada, cada equipamento funcionando e cada colaborador bem orientado fazem parte de um compromisso maior: cuidar do ambiente do cliente com seriedade, respeito e confiabilidade.
+</p>
                             </div>
                             <div className="border-l-2 border-primary pl-8 transition-all hover:pl-10">
                                 <h4 className="text-white font-bold uppercase text-xs tracking-[0.2em] mb-4">Visão</h4>
-                                <p className="text-slate-500 text-xs leading-relaxed">Ser a interface definitiva entre tecnologia e proteção humana.</p>
+                                <p className="text-slate-500 text-xs leading-relaxed">Ser reconhecido como um grupo empresarial de referência na prestação de serviços de segurança patrimonial, controle de acesso e soluções operacionais integradas, destacando-se pela qualidade da execução, pela organização documental, pela postura das equipes e pela capacidade de unir atendimento humano e tecnologia de forma eficiente.
+Queremos ser lembrados não apenas como fornecedores, mas como parceiros estratégicos dos nossos clientes, contribuindo para ambientes mais seguros, controlados, produtivos e bem assistidos.
+</p>
                             </div>
                         </div>
                         
                         <div className="pt-6">
+                    <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tighter uppercase italic leading-tight mb-10">
+                     Acesse nosso Acervo Técnico-Operacional:
+                    </h3>
+                            
+                            <p className="text-slate-400 text-lg leading-relaxed font-light">
+                            Conheça os documentos que estruturam nossas rotinas, procedimentos, descrições de atividades, normas internas, código de ética e padrões operacionais aplicados aos serviços de segurança patrimonial, portaria, controle de acesso, monitoramento e sistemas eletrônicos de segurança e controle de acesso.
+                        </p>
                             <a
                                 href="/apresentacao-avlis.pdf"
                                 download
-                                className="inline-flex items-center gap-3 bg-primary/5 text-primary border border-primary/20 hover:bg-primary/10 hover:border-primary px-6 py-3 rounded-full font-bold text-[10px] uppercase tracking-widest transition-all group"
+                                className="inline-flex mt-6 items-center gap-3 bg-primary/5 text-primary border border-primary/20 hover:bg-primary/10 hover:border-primary px-6 py-3 rounded-full font-bold text-[10px] uppercase tracking-widest transition-all group"
                             >
                                 <svg className="size-4 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />

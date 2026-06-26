@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import edpGrupoImg from '../assets/EDP-Grupo.png';
-import statkraftImg from '../assets/complex-sao-fernando.png';
+import statkraftImg from '../assets/Complex-Sao-fernando.png';
 import anemusImg from '../assets/2w-eolica.png';
 import elawanImg from '../assets/Elawan-Macambiras.png';
 import echoenergiaImg from '../assets/echoenergia.png';
@@ -11,7 +11,7 @@ import elera from '../assets/Elera.png';
 import nordex from '../assets/Nordex.png';
 import totalwind from '../assets/RNMacau.png';
 import elawan2 from '../assets/Elawan.png';
-import iberobras from '../assets/iberobras.png';
+import iberobras from '../assets/Iberobras.png';
 import tsk from '../assets/TSK.png';
 
 type ClientStatus = 'ATIVO' | 'PARCEIROS ANTERIORES';
