@@ -2,27 +2,33 @@ export default function Hardware() {
     const specs = [
         {
             icon: 'videocam',
-            tag: 'Optic_01',
-            title: 'Resolução Ultra HD 4K',
-            description: 'Captura de detalhes críticos com fidelidade absoluta em 3840x2160 pixels.',
+            tag: 'Tec_01',
+            title: 'CFTV',
+            description: 'Câmeras de alta definição, gravação digital, análise de imagens e apoio à identificação de eventos suspeitos.',
         },
         {
-            icon: 'thermostat',
-            tag: 'Optic_02',
-            title: 'Visão Térmica Avançada',
-            description: 'Sensores de radiação infravermelha para monitoramento em escuridão total ou fumaça.',
+            icon: 'sensors',
+            tag: 'Tec_02',
+            title: 'Sensores e Alarmes',
+            description: 'Dispositivos de detecção preventiva para intrusão, presença, abertura, perímetro, calor, fumaça e situações atípicas.',
         },
         {
-            icon: 'zoom_in',
-            tag: 'Optic_03',
-            title: 'Lentes Varifocais Motorizadas',
-            description: 'Ajuste remoto de foco e zoom para cobertura adaptável de perímetros dinâmicos.',
+            icon: 'fingerprint',
+            tag: 'Tec_03',
+            title: 'Controle de Acesso Automatizado',
+            description: 'Softwares, biometria, reconhecimento facial, QR Code, TAG veicular, portões, cancelas e registros de acesso.',
         },
         {
-            icon: 'psychology',
-            tag: 'Core_AI',
-            title: 'Analíticos de IA Integrados',
-            description: 'Processamento na borda para reconhecimento facial e detecção de intrusão autônoma.',
+            icon: 'satellite_alt',
+            tag: 'Tec_04',
+            title: 'Conectividade Remota',
+            description: 'Internet via satélite e acesso remoto para monitoramento, operação e suporte em áreas estratégicas ou de difícil infraestrutura.',
+        },
+        {
+            icon: 'flight',
+            tag: 'Tec_05',
+            title: 'Tecnologia de Apoio Operacional',
+            description: 'Drones, aplicativos, checklists digitais, relatórios, evidências e softwares para gestão da segurança patrimonial.',
         },
     ];
 
@@ -33,16 +39,12 @@ export default function Hardware() {
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div>
-                        <h2 className="text-primary text-[10px] font-bold tracking-[0.5em] uppercase mb-4">Hardware Infrastructure</h2>
-                        <h3 className="text-4xl font-bold text-white tracking-tighter uppercase italic">Technical Specifications</h3>
-                    </div>
-                    <div className="text-right hidden md:block">
-                        <div className="text-primary font-mono text-[10px] tracking-widest uppercase mb-1">Hardware Revision: v4.0.2</div>
-                        <div className="text-slate-500 font-mono text-[10px] tracking-widest uppercase">Firmware: Encrypted_XOS</div>
+                        <h2 className="text-primary text-[10px] font-bold tracking-[0.5em] uppercase mb-4">Infraestrutura</h2>
+                        <h3 className="text-4xl font-bold text-white tracking-tighter uppercase italic">Monitoramento Inteligente</h3>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 border border-white/5">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5">
                     {specs.map((spec, i) => (
                         <div key={i} className="bg-elephant-gray p-8 group hover:bg-primary/5 transition-colors relative">
                             <div className="flex items-center justify-between mb-12">

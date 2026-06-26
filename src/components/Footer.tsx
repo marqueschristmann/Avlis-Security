@@ -1,18 +1,15 @@
+import avlisLogo from '../assets/Avlis-logo.png';
+
 export default function Footer() {
     return (
         <footer className="bg-background-dark border-t border-white/5 py-12">
             <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10">
                 <div className="flex items-center gap-3">
-                    <div className="size-7 text-primary">
-                        <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
-                        </svg>
-                    </div>
-                    <span className="text-xl font-bold tracking-tighter text-slate-100 font-display">AVLIS</span>
+                    <img src={avlisLogo} alt="Avlis Logo" className="h-14 w-auto object-contain grayscale brightness-200" />
                 </div>
 
                 <div className="text-slate-600 text-[10px] tracking-[0.2em] uppercase font-bold text-center md:text-left">
-                    © 2026 AVLIS SECURITY SYSTEMS. TODOS OS DIREITOS RESERVADOS.
+                    © 2026 AVLIS COMPANY. TODOS OS DIREITOS RESERVADOS.
                 </div>
 
                 <div className="flex gap-8">
