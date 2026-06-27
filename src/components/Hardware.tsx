@@ -33,7 +33,7 @@ export default function Hardware() {
     ];
 
     return (
-        <section className="py-32 border-t border-white/5 relative overflow-hidden bg-background-dark">
+        <section className="py-32 border-t border-white/5 relative overflow-hidden bg-background-dark" id="hardware">
             <div className="absolute inset-0 grid-bg opacity-5"></div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">

@@ -13,6 +13,7 @@ import totalwind from '../assets/RNMacau.png';
 import elawan2 from '../assets/Elawan.png';
 import iberobras from '../assets/Iberobras.png';
 import tsk from '../assets/TSK.png';
+import fazenda from '../assets/fazenda-itaueira.png';
 
 type ClientStatus = 'ATIVO' | 'PARCEIROS ANTERIORES';
 
@@ -73,7 +74,7 @@ const slides: ClientSlide[] = [
         projects: ['Viveiro de Camarões Itaueira'],
         status: 'ATIVO',
         sector: 'Cliente Ativo · Aquicultura',
-        image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop',
+        image: fazenda,
     },
     // ── ANTECESSORES ────────────────────────────────────────────────────────
     {
@@ -352,12 +353,11 @@ export default function Presence() {
                 </div>
 
                 {/* Stats Grid */}
-                <div className="mt-24 grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+                <div className="mt-24 grid grid-cols-1 sm:grid-cols-3 gap-12 lg:gap-16 max-w-4xl mx-auto justify-center">
                     {[
                         { value: '24/7', label: 'Monitoramento' },
                         { value: '15+', label: 'Parques Ativos' },
                         { value: '500+', label: 'Ativos Protegidos' },
-                        { value: '0ms', label: 'Latência Operacional' },
                     ].map((stat, i) => (
                         <div key={i} className="text-center border-t border-primary/10 pt-10 group hover:border-primary/40 transition-colors">
                             <div className="text-4xl md:text-5xl font-bold text-white mb-2 font-display italic transition-colors group-hover:text-primary">

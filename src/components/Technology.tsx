@@ -1,3 +1,5 @@
+import avlisGif from '../assets/avlis.gif';
+
 export default function Technology() {
     return (
         <section className="py-32 bg-background-dark border-y border-white/5 relative overflow-hidden" id="tecnologia">
@@ -24,43 +26,29 @@ export default function Technology() {
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <div className="text-center mb-24">
                     <h2 className="text-primary text-[10px] font-bold tracking-[0.5em] uppercase mb-4 flex items-center justify-center gap-2">
-                        <span className="size-2 bg-primary"></span> Digital Ecosystem
+                        <span className="size-2 bg-primary"></span> Ecossistema Digital
                     </h2>
                     <h3 className="text-4xl md:text-5xl font-bold text-slate-100 tracking-tighter uppercase italic">Tecnologia de Vanguarda</h3>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
-                    {/* Left features */}
-                    <div className="space-y-16">
-                        <div className="text-right flex flex-col items-end group">
-                            <span className="material-symbols-outlined text-primary text-3xl mb-4 group-hover:scale-110 transition-transform">device_thermostat</span>
-                            <h4 className="text-slate-100 font-bold uppercase tracking-widest mb-3">Sensores de Calor</h4>
-                            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">Detecção térmica avançada integrada a sistemas de IA.</p>
-                        </div>
-                        <div className="text-right flex flex-col items-end group">
-                            <span className="material-symbols-outlined text-primary text-3xl mb-4 group-hover:scale-110 transition-transform">visibility</span>
-                            <h4 className="text-slate-100 font-bold uppercase tracking-widest mb-3">Visão Computacional</h4>
-                            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">Reconhecimento de padrões e comportamentos anômalos.</p>
-                        </div>
-                    </div>
-
-                    {/* Central HUD */}
-                    <div className="relative flex justify-center py-10">
-                        <div className="size-80 border-2 border-primary/10 rounded-full flex items-center justify-center relative animate-pulse-slow">
-                            <div className="size-64 border border-primary/30 rounded-full flex items-center justify-center p-2 relative">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-center">
+                    {/* Central HUD — shown first on mobile, center on desktop */}
+                    <div className="relative flex justify-center py-10 order-first lg:order-2">
+                        <div className="size-64 md:size-80 border-2 border-primary/10 rounded-full flex items-center justify-center relative animate-pulse-slow">
+                            <div className="size-52 md:size-64 border border-primary/30 rounded-full flex items-center justify-center p-2 relative">
                                 <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/20 animate-[spin_20s_linear_infinite]" />
                                 <img
                                     className="size-full object-cover rounded-full border-4 border-primary shadow-[0_0_50px_rgba(147,197,114,0.3)] saturate-[0.8] contrast-125"
-                                    alt="Futuristic HUD display"
-                                    src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600"
+                                    alt="Monitoramento em Tempo Real"
+                                    src={avlisGif}
                                 />
 
                                 <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-primary/20 border border-primary/50 text-primary px-4 py-1.5 text-[8px] font-bold tracking-[0.3em] whitespace-nowrap backdrop-blur-md z-20">
-                                    NEURAL PROCESSING: ACTIVE
+                                    SISTEMA DE SEGURANÇA: ATIVO
                                 </div>
 
                                 <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-background-dark px-4 py-1.5 text-[10px] font-bold tracking-widest z-20">
-                                    LIVE_FEED
+                                    AO VIVO
                                 </div>
                             </div>
                         </div>
@@ -70,8 +58,22 @@ export default function Technology() {
                         <div className="absolute inset-0 border border-primary/5 rounded-full -m-20 animate-[spin_45s_linear_infinite_reverse]" />
                     </div>
 
-                    {/* Right features */}
-                    <div className="space-y-16">
+                    {/* Left features — row on mobile, left col on desktop */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-10 lg:gap-16 order-2 lg:order-1">
+                        <div className="text-left lg:text-right flex flex-col items-start lg:items-end group">
+                            <span className="material-symbols-outlined text-primary text-3xl mb-4 group-hover:scale-110 transition-transform">device_thermostat</span>
+                            <h4 className="text-slate-100 font-bold uppercase tracking-widest mb-3">Sensores de Calor</h4>
+                            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">Detecção térmica avançada integrada.</p>
+                        </div>
+                        <div className="text-left lg:text-right flex flex-col items-start lg:items-end group">
+                            <span className="material-symbols-outlined text-primary text-3xl mb-4 group-hover:scale-110 transition-transform">visibility</span>
+                            <h4 className="text-slate-100 font-bold uppercase tracking-widest mb-3">Visão Computacional</h4>
+                            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">Reconhecimento de padrões e comportamentos anômalos.</p>
+                        </div>
+                    </div>
+
+                    {/* Right features — row on mobile, right col on desktop */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-10 lg:gap-16 order-3">
                         <div className="text-left flex flex-col items-start group">
                             <span className="material-symbols-outlined text-primary text-3xl mb-4 group-hover:scale-110 transition-transform">enhanced_encryption</span>
                             <h4 className="text-slate-100 font-bold uppercase tracking-widest mb-3">Criptografia Ponta-a-Ponta</h4>
@@ -79,8 +81,8 @@ export default function Technology() {
                         </div>
                         <div className="text-left flex flex-col items-start group">
                             <span className="material-symbols-outlined text-primary text-3xl mb-4 group-hover:scale-110 transition-transform">satellite_alt</span>
-                            <h4 className="text-slate-100 font-bold uppercase tracking-widest mb-3">Rede Mesh Satelital</h4>
-                            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">Conectividade garantida mesmo em áreas de sombra.</p>
+                            <h4 className="text-slate-100 font-bold uppercase tracking-widest mb-3">Rede</h4>
+                            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">Conectividade garantida mesmo em áreas remotas.</p>
                         </div>
                     </div>
                 </div>

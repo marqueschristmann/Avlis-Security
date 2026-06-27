@@ -29,8 +29,14 @@ export default function Authority() {
                     </div>
 
                     <p className="text-slate-400 text-lg leading-relaxed font-light">
-                        A Avlis não é apenas uma empresa de segurança; somos o arquétipo da proteção inabalável.
-                        Através de inteligência tática avançada, dominamos o ambiente operacional para entregar poder inigualável aos nossos parceiros.
+                        A AVLIS COMPANY não é apenas uma empresa de segurança; somos o arquétipo da proteção inabalável. Por meio de inteligência tática avançada, presença operacional qualificada e tecnologia integrada, dominamos o ambiente operacional para entregar segurança, controle e confiança aos nossos parceiros.
+
+Somos um grupo empresarial especializado na proteção, organização e suporte operacional de ambientes corporativos, condominiais, industriais e estratégicos. Nossa atuação ocorre de forma integrada por meio da Avlis Service, responsável pelos serviços de portaria, recepção, controle de acesso físico e remoto, monitoramento, implantação, instalação e manutenção de sistemas eletrônicos de segurança e controle de acesso, e da Avlis Segurança Privada, especializada na vigilância patrimonial e na proteção de patrimônios de terceiros.
+
+Nossa estrutura combina profissionais capacitados, tecnologia de ponta, padronização de processos e acompanhamento operacional contínuo, garantindo rastreabilidade, eficiência e respostas rápidas às demandas de cada operação. Atuamos com foco na prevenção de riscos, no fortalecimento da segurança patrimonial e na manutenção da ordem operacional, proporcionando aos nossos clientes um ambiente mais seguro, organizado e produtivo.
+
+Mais do que prestar serviços, construímos soluções estratégicas capazes de fortalecer a imagem institucional de nossos clientes, reduzir vulnerabilidades e criar operações sólidas, confiáveis e preparadas para os desafios do presente e do futuro. Na AVLIS COMPANY, proteção não é apenas uma atividade: é um compromisso permanente com a excelência, a disciplina e a segurança inabalável.
+
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

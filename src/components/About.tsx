@@ -1,19 +1,39 @@
+import missaoImg from '../assets/missao.jpg';
+import portfolioZip from '../assets/zip/Pasta-Anexo-para-Portfolio.zip';
+
 export default function About() {
     return (
         <section className="py-32 relative overflow-hidden bg-elephant-gray" id="sobre">
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
                 <div className="relative order-2 lg:order-1">
                     <div className="aspect-square glass-card rounded-2xl overflow-hidden relative">
                         <img
                             className="w-full h-full object-cover grayscale opacity-80"
-                            alt="High-tech surveillance center"
-                            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
+                            alt="Missão e Valores da Empresa"
+                            src={missaoImg}
                         />
                         <div className="absolute inset-0 bg-primary/10 mix-blend-multiply transition-colors group-hover:bg-primary/5"></div>
                     </div>
-                    <div className="absolute -bottom-10 -right-10 glass-card p-10 rounded-2xl hidden md:block border-primary/20 backdrop-blur-3xl shadow-2xl">
-                        <div className="text-5xl font-bold text-primary mb-2 font-display italic">0%</div>
-                        <div className="text-[10px] text-slate-400 tracking-widest uppercase font-bold">Falha Operacional Histórica</div>
+                    <div className="absolute -bottom-8 -right-8 glass-card p-8 rounded-2xl hidden md:block border border-primary/20 backdrop-blur-3xl shadow-[0_30px_60px_rgba(0,0,0,0.6)] group hover:scale-105 transition-all duration-500 overflow-hidden z-20">
+                        {/* Decorative background glow */}
+                        <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl -z-10 group-hover:bg-primary/30 transition-colors"></div>
+                        
+                        <div className="flex items-start gap-5 relative z-10">
+                            <div className="size-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0 group-hover:border-primary transition-colors">
+                                <span className="material-symbols-outlined text-primary text-2xl group-hover:scale-110 transition-transform">military_tech</span>
+                            </div>
+                            <div>
+                                <div className="text-5xl font-bold text-white mb-2 font-display italic tracking-tighter flex items-end gap-1">
+                                    1<span className="text-primary text-4xl">º</span>
+                                </div>
+                                <div className="text-[11px] text-primary tracking-[0.2em] uppercase font-bold mb-1">
+                                    Em Eficiência
+                                </div>
+                                <div className="text-[9px] text-slate-400 tracking-widest uppercase">
+                                    Operacional
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -55,14 +75,14 @@ Queremos ser lembrados não apenas como fornecedores, mas como parceiros estrat�
                             Conheça os documentos que estruturam nossas rotinas, procedimentos, descrições de atividades, normas internas, código de ética e padrões operacionais aplicados aos serviços de segurança patrimonial, portaria, controle de acesso, monitoramento e sistemas eletrônicos de segurança e controle de acesso.
                         </p>
                             <a
-                                href="/apresentacao-avlis.pdf"
-                                download
+                                href={portfolioZip}
+                                download="Acervo_Tecnico_Avlis.zip"
                                 className="inline-flex mt-6 items-center gap-3 bg-primary/5 text-primary border border-primary/20 hover:bg-primary/10 hover:border-primary px-6 py-3 rounded-full font-bold text-[10px] uppercase tracking-widest transition-all group"
                             >
                                 <svg className="size-4 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                 </svg>
-                                Saiba mais sobre a Nossa Empresa PDF
+                                Baixar Acervo Técnico (.zip)
                             </a>
                         </div>
                     </div>
