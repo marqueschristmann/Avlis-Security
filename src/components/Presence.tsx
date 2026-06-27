@@ -13,7 +13,7 @@ import totalwind from '../assets/RNMacau.png';
 import elawan2 from '../assets/Elawan.png';
 import iberobras from '../assets/Iberobras.png';
 import tsk from '../assets/TSK.png';
-import fazenda from '../assets/fazenda-itaueira.png';
+import fazenda from '../assets/fazenda-Itaueira.png';
 
 type ClientStatus = 'ATIVO' | 'PARCEIROS ANTERIORES';
 
