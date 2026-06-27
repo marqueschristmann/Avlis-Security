@@ -63,7 +63,7 @@ export default function Hardware() {
                     <div className="inline-flex items-center gap-2 px-6 py-2 border border-primary/20 rounded-full bg-primary/5">
                         <span className="size-2 bg-primary rounded-full animate-pulse"></span>
                         <span className="text-[9px] text-primary/60 uppercase tracking-widest font-mono font-bold">
-                            Sistema de hardware totalmente auditado por protocolos SOC2
+                            Sistema de hardware totalmente auditado.
                         </span>
                     </div>
                 </div>

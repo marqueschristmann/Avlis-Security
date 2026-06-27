@@ -54,7 +54,7 @@ Mais do que prestar serviços, construímos soluções estratégicas capazes de 
                                 <span className="material-symbols-outlined text-primary text-2xl group-hover:scale-110 transition-transform">verified_user</span>
                                 <h4 className="text-white font-bold uppercase text-xs tracking-[0.2em]">Protocolos</h4>
                             </div>
-                            <p className="text-slate-500 text-xs leading-relaxed text-justify">Rigor militar em cada camada operacional com certificação SOC2.</p>
+                            <p className="text-slate-500 text-xs leading-relaxed text-justify">Rigor militar em cada camada operacional.</p>
                         </div>
                     </div>
                 </div>
