@@ -361,8 +361,8 @@ export default function Presence() {
                 <div className="mt-24 grid grid-cols-1 sm:grid-cols-3 gap-12 lg:gap-16 max-w-4xl mx-auto justify-center">
                     {[
                         { value: '24/7', label: 'Monitoramento' },
-                        { value: '15+', label: 'Parques Ativos' },
-                        { value: '500+', label: 'Ativos Protegidos' },
+                        { value: '12+', label: 'Parques Ativos' },
+                        { value: '234+', label: 'Ativos Protegidos' },
                     ].map((stat, i) => (
                         <div key={i} className="text-center border-t border-primary/10 pt-10 group hover:border-primary/40 transition-colors">
                             <div className="text-4xl md:text-5xl font-bold text-white mb-2 font-display italic transition-colors group-hover:text-primary">
