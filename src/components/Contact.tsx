@@ -56,7 +56,7 @@ export default function Contact() {
                         <h3 className="text-4xl md:text-5xl font-bold text-slate-100 tracking-tighter uppercase italic mb-8 leading-tight">
                             Pronto para elevar seu<br />padrão de segurança?
                         </h3>
-                        <p className="text-slate-400 mb-12 leading-relaxed font-light text-lg">
+                        <p className="text-slate-400 mb-12 leading-relaxed font-light text-lg text-justify">
                             Nossa equipe de especialistas está pronta para desenhar uma solução personalizada para seus ativos mais valiosos.
                             Preencha o formulário ao lado ou entre em contato e um consultor sênior entrará em contato.
                         </p>
@@ -91,7 +91,7 @@ export default function Contact() {
                                     <span className="material-symbols-outlined text-primary text-5xl">check_circle</span>
                                 </div>
                                 <h4 className="text-3xl font-bold text-white uppercase italic">Mensagem Enviada!</h4>
-                                <p className="text-slate-400 font-light leading-relaxed">
+                                <p className="text-slate-400 font-light leading-relaxed text-justify">
                                     Recebemos suas informações com sucesso. Um de nossos consultores entrará em contato em breve através do e-mail informado.
                                 </p>
                                 <button 

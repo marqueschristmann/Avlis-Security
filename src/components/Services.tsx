@@ -66,7 +66,7 @@ export default function Services() {
                         <span className="size-2 bg-primary"></span> Possibilidades
                     </h2>
                     <h3 className="text-5xl font-bold text-white tracking-tighter uppercase italic mb-6">Nossas Soluções Operacionais</h3>
-                    <p className="text-slate-400 leading-relaxed font-light">
+                    <p className="text-slate-400 leading-relaxed font-light text-justify">
                         A Avlis Company oferece soluções integradas em segurança patrimonial, portaria, controle de acesso, recepção, monitoramento e sistemas eletrônicos de segurança, unindo profissionais capacitados, tecnologia, padronização de processos e acompanhamento operacional.
                     </p>
                 </div>
@@ -84,13 +84,13 @@ export default function Services() {
                             <h4 className="text-white font-bold uppercase text-lg tracking-widest mb-2 pr-12">{service.title}</h4>
                             <h5 className="text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-6">{service.subtitle}</h5>
                             
-                            <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">
+                            <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow text-justify">
                                 {service.description}
                             </p>
                             
                             <div className="pt-6 border-t border-white/5">
                                 <span className="text-white text-[10px] font-bold uppercase tracking-widest block mb-3">Inclui:</span>
-                                <p className="text-slate-500 text-xs leading-relaxed italic">{service.includes}</p>
+                                <p className="text-slate-500 text-xs leading-relaxed italic text-justify">{service.includes}</p>
                             </div>
                         </div>
                     ))}

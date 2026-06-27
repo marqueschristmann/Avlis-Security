@@ -1,3 +1,4 @@
+import dominio from '../assets/domínio.png';
 export default function Authority() {
     return (
         <section className="py-32 relative overflow-hidden bg-elephant-gray">
@@ -10,10 +11,10 @@ export default function Authority() {
                         <img
                             className="rounded-2xl shadow-2xl grayscale transition-all duration-1000 group-hover:grayscale-0 relative z-10 border border-white/10"
                             alt="Security specialist in tactical gear"
-                            src="https://images.unsplash.com/photo-1590402444816-05d832df2291?q=80&w=2070&auto=format&fit=crop"
+                            src={dominio}
                         />
                         <div className="absolute top-0 right-0 glass-card px-8 py-5 rounded-bl-3xl rounded-tr-2xl z-20 border-l border-b border-primary/20 backdrop-blur-2xl">
-                            <span className="text-primary font-bold text-xl tracking-tighter font-display italic">AVLIS // SOC_ALPHA</span>
+                            <span className="text-primary font-bold text-xl tracking-tighter font-display italic">AVLIS COMPANY</span>
                         </div>
                     </div>
                 </div>
@@ -28,7 +29,7 @@ export default function Authority() {
                         </h3>
                     </div>
 
-                    <p className="text-slate-400 text-lg leading-relaxed font-light">
+                    <p className="text-slate-400 text-lg leading-relaxed font-light text-justify">
                         A AVLIS COMPANY não é apenas uma empresa de segurança; somos o arquétipo da proteção inabalável. Por meio de inteligência tática avançada, presença operacional qualificada e tecnologia integrada, dominamos o ambiente operacional para entregar segurança, controle e confiança aos nossos parceiros.
 
 Somos um grupo empresarial especializado na proteção, organização e suporte operacional de ambientes corporativos, condominiais, industriais e estratégicos. Nossa atuação ocorre de forma integrada por meio da Avlis Service, responsável pelos serviços de portaria, recepção, controle de acesso físico e remoto, monitoramento, implantação, instalação e manutenção de sistemas eletrônicos de segurança e controle de acesso, e da Avlis Segurança Privada, especializada na vigilância patrimonial e na proteção de patrimônios de terceiros.
@@ -45,7 +46,7 @@ Mais do que prestar serviços, construímos soluções estratégicas capazes de 
                                 <span className="material-symbols-outlined text-primary text-2xl group-hover:scale-110 transition-transform">psychology</span>
                                 <h4 className="text-white font-bold uppercase text-xs tracking-[0.2em]">Inteligência</h4>
                             </div>
-                            <p className="text-slate-500 text-xs leading-relaxed">Análise neural preditiva em tempo real com processamento de borda.</p>
+                            <p className="text-slate-500 text-xs leading-relaxed text-justify">Análise neural preditiva em tempo real com processamento de borda.</p>
                         </div>
 
                         <div className="glass-card p-8 rounded-xl group transition-all duration-500 hover:glass-card-hover border-primary/10">
@@ -53,7 +54,7 @@ Mais do que prestar serviços, construímos soluções estratégicas capazes de 
                                 <span className="material-symbols-outlined text-primary text-2xl group-hover:scale-110 transition-transform">verified_user</span>
                                 <h4 className="text-white font-bold uppercase text-xs tracking-[0.2em]">Protocolos</h4>
                             </div>
-                            <p className="text-slate-500 text-xs leading-relaxed">Rigor militar em cada camada operacional com certificação SOC2.</p>
+                            <p className="text-slate-500 text-xs leading-relaxed text-justify">Rigor militar em cada camada operacional com certificação SOC2.</p>
                         </div>
                     </div>
                 </div>

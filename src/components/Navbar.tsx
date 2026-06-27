@@ -30,7 +30,7 @@ export default function Navbar() {
                 <a 
                     href="#" 
                     onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                    className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+                    className="flex items-center gap-3 px-5 py-1 rounded-full hover:opacity-80 transition-opacity border border-primary/30 hover:border-primary"
                 >
                     <img src={avlisLogo} alt="Avlis Logo" className="h-14 w-auto object-contain grayscale brightness-200" />
                 </a>

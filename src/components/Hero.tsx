@@ -1,4 +1,4 @@
-import avlisHero from '../assets/avlis-hero.gif';
+import avlisHero from '../assets/avlis-hero.png';
 
 export default function Hero() {
     return (
@@ -55,7 +55,7 @@ export default function Hero() {
                             <span className="text-primary text-glow">Estratégica</span>
                         </h1>
 
-                        <p className="text-lg text-slate-400 max-w-lg mb-12 font-light leading-relaxed">
+                        <p className="text-lg text-white-400 max-w-lg mb-12 font-light leading-relaxed text-justify">
                            Segurança não é apenas presença. É controle, prevenção, procedimento e confiança.
                         </p>
 
