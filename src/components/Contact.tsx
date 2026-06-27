@@ -72,13 +72,13 @@ export default function Contact() {
                                 </div>
                             </a>
 
-                            <a href="mailto:comercial@avliscompany.com" className="flex items-center gap-6 group cursor-pointer w-fit">
-                                <div className="size-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-all duration-300">
+                            <a href="mailto:comercial@avliscompany.com" className="flex items-center gap-4 md:gap-6 group cursor-pointer">
+                                <div className="size-14 shrink-0 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-all duration-300">
                                     <span className="material-symbols-outlined text-2xl">mail</span>
                                 </div>
-                                <div>
+                                <div className="min-w-0">
                                     <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-1 group-hover:text-primary transition-colors">E-mail Corporativo</p>
-                                    <p className="text-slate-100 font-bold text-lg font-mono transition-colors">comercial@avliscompany.com</p>
+                                    <p className="text-slate-100 font-bold text-sm md:text-lg font-mono transition-colors break-all">comercial@avliscompany.com</p>
                                 </div>
                             </a>
                         </div>

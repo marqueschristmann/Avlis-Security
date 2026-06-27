@@ -238,8 +238,8 @@ export default function Presence() {
                 <div className="relative group">
                     {/* Main Card */}
                     <div
-                        className="aspect-[21/9] glass-card rounded-2xl overflow-hidden relative border-primary/20 backdrop-blur-xl"
-                        style={{ minHeight: '360px' }}
+                        className="relative glass-card rounded-2xl overflow-hidden border-primary/20 backdrop-blur-xl"
+                        style={{ minHeight: '320px', aspectRatio: 'auto' }}
                     >
                         {/* Background image */}
                         <img
@@ -255,7 +255,7 @@ export default function Presence() {
                         <div className="absolute inset-0 bg-gradient-to-r from-background-dark/70 via-transparent to-transparent"></div>
 
                         {/* Status badge top-right */}
-                        <div className="absolute top-6 right-6 flex items-center gap-2">
+                        <div className="absolute top-4 right-4 md:top-6 md:right-6 flex items-center gap-2 z-10">
                             <span
                                 className={`text-[10px] font-bold tracking-[0.3em] uppercase px-3 py-1.5 border font-mono ${slide.status === 'ATIVO'
                                     ? 'border-primary/50 text-primary bg-primary/10'
@@ -275,48 +275,53 @@ export default function Presence() {
 
                         {/* Content */}
                         <div
-                            className={`absolute bottom-0 left-0 right-0 p-8 md:p-12 transition-all duration-500 ease-out ${slideClass}`}
+                            className={`absolute bottom-0 left-0 right-0 p-5 md:p-12 transition-all duration-500 ease-out ${slideClass}`}
                         >
                             {/* Sector tag */}
-                            <div className="text-primary text-[10px] font-bold tracking-[0.3em] uppercase mb-4 border-l-2 border-primary pl-4 font-mono">
+                            <div className="text-primary text-[9px] md:text-[10px] font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase mb-3 border-l-2 border-primary pl-3 md:pl-4 font-mono">
                                 {slide.sector}
                             </div>
 
                             {/* Client name */}
-                            <h4 className="text-3xl md:text-5xl font-bold text-white uppercase italic tracking-tighter mb-6 leading-none">
+                            <h4 className="text-2xl md:text-5xl font-bold text-white uppercase italic tracking-tighter mb-4 leading-none">
                                 {slide.client}
                             </h4>
 
-                            {/* Projects list */}
-                            <div className="flex flex-wrap gap-2 mb-6">
-                                {slide.projects.map((p, i) => (
+                            {/* Projects list — limit on mobile */}
+                            <div className="flex flex-wrap gap-1.5 md:gap-2 mb-2">
+                                {slide.projects.slice(0, window.innerWidth < 640 ? 2 : slide.projects.length).map((p, i) => (
                                     <span
                                         key={i}
-                                        className="text-[10px] text-slate-300 border border-white/10 bg-white/5 px-2.5 py-1 font-mono tracking-wider leading-tight"
+                                        className="text-[9px] md:text-[10px] text-slate-300 border border-white/10 bg-white/5 px-2 md:px-2.5 py-1 font-mono tracking-wider leading-tight"
                                     >
                                         {p}
                                     </span>
                                 ))}
+                                {window.innerWidth < 640 && slide.projects.length > 2 && (
+                                    <span className="text-[9px] text-slate-500 border border-white/10 bg-white/5 px-2 py-1 font-mono">
+                                        +{slide.projects.length - 2} mais
+                                    </span>
+                                )}
                             </div>
                         </div>
                     </div>
 
                     {/* Navigation Controls */}
-                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 z-20">
+                    <div className="flex items-center justify-center gap-3 mt-6 z-20">
                         {/* Prev button */}
                         <button
                             onClick={prev}
                             aria-label="Slide anterior"
-                            className="size-14 bg-background-dark border border-primary/30 flex items-center justify-center hover:bg-primary text-primary hover:text-background-dark transition-all shadow-2xl focus:outline-none"
+                            className="size-11 md:size-14 bg-background-dark border border-primary/30 flex items-center justify-center hover:bg-primary text-primary hover:text-background-dark transition-all shadow-2xl focus:outline-none"
                             style={{ clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)' }}
                         >
-                            <span className="material-symbols-outlined font-bold">chevron_left</span>
+                            <span className="material-symbols-outlined font-bold text-base md:text-xl">chevron_left</span>
                         </button>
 
                         {/* Counter */}
-                        <div className="px-10 py-3 bg-background-dark border border-primary/20 text-xs font-mono text-primary tracking-[0.6em] flex items-center gap-6 rounded-sm shadow-xl select-none">
+                        <div className="px-5 md:px-10 py-3 bg-background-dark border border-primary/20 text-xs font-mono text-primary tracking-[0.4em] md:tracking-[0.6em] flex items-center gap-3 md:gap-6 rounded-sm shadow-xl select-none">
                             <span className="opacity-40 font-bold">{String(current + 1).padStart(2, '0')}</span>
-                            <div className="w-16 h-[1px] bg-primary/30 relative overflow-hidden">
+                            <div className="w-10 md:w-16 h-[1px] bg-primary/30 relative overflow-hidden">
                                 <div
                                     className="h-full bg-primary transition-all duration-500 ease-out"
                                     style={{ width: `${((current + 1) / slides.length) * 100}%` }}
@@ -329,10 +334,10 @@ export default function Presence() {
                         <button
                             onClick={next}
                             aria-label="Próximo slide"
-                            className="size-14 bg-background-dark border border-primary/30 flex items-center justify-center hover:bg-primary text-primary hover:text-background-dark transition-all shadow-2xl focus:outline-none"
+                            className="size-11 md:size-14 bg-background-dark border border-primary/30 flex items-center justify-center hover:bg-primary text-primary hover:text-background-dark transition-all shadow-2xl focus:outline-none"
                             style={{ clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)' }}
                         >
-                            <span className="material-symbols-outlined font-bold">chevron_right</span>
+                            <span className="material-symbols-outlined font-bold text-base md:text-xl">chevron_right</span>
                         </button>
                     </div>
 
